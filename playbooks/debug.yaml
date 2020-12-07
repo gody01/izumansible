@@ -1,0 +1,11 @@
+---
+- hosts: all
+  vars:
+  become: true
+  serial: 1
+  ignore_unreachable: 1
+
+  tasks:
+   - name: print some facts
+     debug:
+      msg: "{{ inventory_hostname }} | {{ ansible_distribution }} {{ ansible_distribution_version }}"
